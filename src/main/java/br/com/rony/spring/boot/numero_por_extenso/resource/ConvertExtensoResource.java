@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.rony.spring.boot.numero_por_extenso.domain.NumeroPorExtenso;
 import br.com.rony.spring.boot.numero_por_extenso.service.ConvertExtensoService;
+import br.com.rony.spring.boot.numero_por_extenso.vo.NumeroPorExtensoVO;
 
 @RestController
 @Validated
@@ -19,7 +19,7 @@ public class ConvertExtensoResource {
 	private ConvertExtensoService convertExtensoService;
 
     @GetMapping("/{numero}")
-	public NumeroPorExtenso getNumeroPorExtenso(
+	public NumeroPorExtensoVO getNumeroPorExtenso(
 			@Valid @Range(min=-99999, max=99999) @PathVariable(name = "numero") Long numero) {
 	      return convertExtensoService.getNumeroPorExtenso(numero.intValue());
    }

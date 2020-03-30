@@ -1,6 +1,6 @@
-package br.com.rony.spring.boot.numero_por_extenso.domain;
+package br.com.rony.spring.boot.numero_por_extenso.vo;
 
-public class NumeroPorExtenso {
+public class NumeroPorExtensoVO {
 	private String extenso;
 
 	public String getExtenso() {
