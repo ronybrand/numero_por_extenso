@@ -20,7 +20,7 @@ public class ConvertExtensoResource {
 
     @GetMapping("/{numero}")
 	public NumeroPorExtensoVO getNumeroPorExtenso(
-			@Valid @Range(min=-99999, max=99999) @PathVariable(name = "numero") Long numero) {
-	      return convertExtensoService.getNumeroPorExtenso(numero.intValue());
+			@Valid @Range(min=-99999, max=99999) @PathVariable(name = "numero") Integer numero) {
+	      return convertExtensoService.getNumeroPorExtenso(numero);
    }
 }
