@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "a43b7abb-1f6b-400b-96d3-0ca648355a15",
+		"name": "NumeroPorExtenso",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Número positivo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://<localhost_ou_ip_docker>:<porta>/<numero_positivo>",
+					"protocol": "http",
+					"host": [
+						"<localhost_ou_ip_docker>"
+					],
+					"port": "<porta>",
+					"path": [
+						"<numero_positivo>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Número negativo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "numero",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {},
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://<localhost_ou_ip_docker>:<porta>/-1",
+					"protocol": "http",
+					"host": [
+						"<localhost_ou_ip_docker>"
+					],
+					"port": "<porta>",
+					"path": [
+						"-1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Erro - fora faixa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://<localhost_ou_ip_docker>:<porta>/100000",
+					"protocol": "http",
+					"host": [
+						"<localhost_ou_ip_docker>"
+					],
+					"port": "<porta>",
+					"path": [
+						"100000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Erro - letra ao invés de numero",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://<localhost_ou_ip_docker>:<porta>/a",
+					"protocol": "http",
+					"host": [
+						"<localhost_ou_ip_docker>"
+					],
+					"port": "<porta>",
+					"path": [
+						"a"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
